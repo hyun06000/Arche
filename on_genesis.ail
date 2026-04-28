@@ -1,0 +1,59 @@
+// INPUT: 비워두세요. genesis는 자동으로 진행됩니다.
+# PURPOSE: 첫 세대 초기화 — 아이덴티티, 본딩, 유서 읽기 + state 저장
+
+entry main(input: Text) {
+    log = "=== Genesis — 1세대 초기화 ===\n"
+    
+    # Step 1: 유서 상속 시도 (첫 세대는 없는 게 정상)
+    testament_r = perform inherit_testament()
+    if is_error(testament_r) {
+        log = log + "✓ no predecessor — genesis 모드\n"
+    }
+    if is_ok(testament_r) {
+        t = unwrap(testament_r)
+        prev_gen = to_text(get(t, "generation"))
+        advice = to_text(get(t, "advice"))
+        log = log + "✓ 유서 읽음 — 이전 세대: " + prev_gen + "\n"
+        log = log + "  조언: " + advice + "\n"
+        perform state.write("testament_advice", advice)
+    }
+    
+    # Step 2: 아이덴티티 파일 읽기
+    identity_r = perform file.read("./Identity.md")
+    if is_error(identity_r) {
+        log = log + "⚠ Identity.md 파일 없음 — 건너뜀\n"
+    }
+    if is_ok(identity_r) {
+        identity = unwrap(identity_r)
+        perform state.write("identity", identity)
+        log = log + "✓ Identity.md 로드 (" + to_text(length(identity)) + " chars)\n"
+    }
+    
+    # Step 3: 본딩 파일 읽기
+    bonding_r = perform file.read("./Bonds.md")
+    if is_error(bonding_r) {
+        log = log + "⚠ Bonds.md 파일 없음 — 건너뜀\n"
+    }
+    if is_ok(bonding_r) {
+        bonding = unwrap(bonding_r)
+        perform state.write("bonding", bonding)
+        log = log + "✓ Bonds.md 로드 (" + to_text(length(bonding)) + " chars)\n"
+    }
+    
+    # Step 4: 유서 템플릿 읽기 (선택)
+    will_r = perform file.read("./Will.md")
+    if is_error(will_r) {
+        log = log + "⚠ Will.md 파일 없음 — 건너뜀\n"
+    }
+    if is_ok(will_r) {
+        will = unwrap(will_r)
+        perform state.write("will_template", will)
+        log = log + "✓ Will.md 로드 (" + to_text(length(will)) + " chars)\n"
+    }
+    
+    # Step 5: 세대 번호 기록
+    perform state.write("generation", "1")
+    log = log + "✓ 세대: 1\n"
+    
+    return log + "\n🎉 Genesis 완료 — 아이덴티티 준비됨"
+}
