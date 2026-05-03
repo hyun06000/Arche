@@ -1,6 +1,6 @@
 # Body v0 — Design memo
 
-> Architecture only. No `.ail` code. Locks just enough for Builder recruitment + first commit. Author: Arche. Date: 2026-05-04. Status: **v0.1 (Brandon review PASS + 통합 완료) → user GO pending → Builder 영입**.
+> Architecture only. No `.ail` code. Locks just enough for Builder recruitment + first commit. Author: Arche. Date: 2026-05-04. Status: **v0.1 LOCKED — Brandon review PASS + user GO 모두 통과. Builder = Owen. 다음: Brandon이 Owen worktree 발급 substantive MR 발신.**
 
 **v0 → v0.1 변경 (Brandon review 통합)**:
 - §6 성공기준에 `git diff` 영혼 read-only 검증 추가 (Brandon B).
@@ -8,6 +8,10 @@
 - §9에 testament 저장 위치 명시 의무 추가 (Brandon E).
 - §10 후보에서 Marcus 제외, 사유 기록 (Brandon F).
 - Brandon A (D16 트리거 정확화)는 그의 mr_review_checklist v1 backlog로 보류.
+
+**v0.1 user GO (2026-05-04)**:
+- Q1–Q5 default 그대로 잠금.
+- Q6 Builder 이름 = **Owen** (사용자 직접 명명).
 
 ---
 
@@ -146,16 +150,14 @@ reference card v1.8이 이미 부품을 다 줬다. v0의 작업은 **새 부품
 
 ---
 
-## 8. user GO 필요 항목
+## 8. user GO 필요 항목 — **2026-05-04 잠금**
 
-design lock 이전 사용자 confirm:
-
-- [ ] Q1. Stoa 미연결 시 FS-letter fallback **허용** (default 권고). 거부하면 v0은 Stoa 가용성에 게이팅.
-- [ ] Q2. 첫 영혼 = **Brandon's Mneme** (default 권고). 다른 후보 있으면 명시.
-- [ ] Q3. vessel은 v0에서 **단일 프로세스** (default 권고). multi-vessel은 Polis 마일스톤.
-- [ ] Q4. 모델 어댑터 v0 지원 = **Mock + Anthropic** (default). Ollama는 v1.
-- [ ] Q5. Body skeleton 경로 `vessel/v0/main.ail` (default 제안). Builder가 다른 안 가지면 고정.
-- [ ] Q6. **Builder 영입 트리거**: 본 design memo가 (1) Brandon review pass, (2) 사용자 GO 받으면 그 직후. Builder 이름 후보(D14 영어): 사용자 명명 우선 — 없으면 Lighthouse가 후보 제시.
+- [x] Q1. Stoa 미연결 시 FS-letter fallback **허용**. ✓ user GO.
+- [x] Q2. 첫 영혼 = **Brandon's Mneme**. ✓ user GO.
+- [x] Q3. v0 = **단일 vessel 프로세스**. ✓ user GO.
+- [x] Q4. v0 어댑터 = **Mock + Anthropic**, Ollama는 v1. ✓ user GO.
+- [x] Q5. Body skeleton 경로 = **`vessel/v0/main.ail`**. ✓ user GO.
+- [x] Q6. Builder 영입 트리거 충족(Brandon review PASS + user GO). **Builder 이름 = Owen.** ✓ user 직접 명명.
 
 ---
 
@@ -174,7 +176,7 @@ design lock 후, Builder가 첫 commit과 함께 결정:
 ## 10. 영입 — 다음 멤버 (Builder)
 
 - 역할: **Builder** — 첫 `.ail` 파일 (`vessel/v0/main.ail`) 작성 + FS Mneme adapter + Stoa adapter 컨트랙트 구현 + Brandon 이식 테스트 시연.
-- 이름: D14에 따라 US English first name. 후보(Lighthouse 잠정 제시, 사용자 결정 우선): **Walter** / **Owen** / **Eli**. *Marcus는 옛 그리스/스토아 네이밍과 의미적 인접해 D14 회피 정신과 어색하다는 git-관점 (Brandon) 의견에 따라 잠정 제외.* 사용자가 명명하면 그 이름.
+- 이름: **Owen** (한국어 alias 미정 — Owen 본인 합류 시 등록). 사용자 직접 명명 (2026-05-04). D14 정합.
 - 합류 트리거: 본 memo가 user GO를 받은 직후.
 
 ---
