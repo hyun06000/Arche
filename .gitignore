@@ -1,2 +1,14 @@
 # Agentic AIL project state — local to this checkout.
 .ail/
+
+.DS_Store
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+*.log
+*.tmp
+node_modules/
+
+# Member worktrees (CLAUDE.md rule 16)
+.worktrees/
