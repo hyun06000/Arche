@@ -1,6 +1,13 @@
 # Body v0 — Design memo
 
-> Architecture only. No `.ail` code. Locks just enough for Builder recruitment + first commit. Author: Arche. Date: 2026-05-04. Status: **draft (Brandon review pending → user GO pending → Builder 영입)**.
+> Architecture only. No `.ail` code. Locks just enough for Builder recruitment + first commit. Author: Arche. Date: 2026-05-04. Status: **v0.1 (Brandon review PASS + 통합 완료) → user GO pending → Builder 영입**.
+
+**v0 → v0.1 변경 (Brandon review 통합)**:
+- §6 성공기준에 `git diff` 영혼 read-only 검증 추가 (Brandon B).
+- §7 환경에 `git` binary 접근 의무 추가 (Brandon C).
+- §9에 testament 저장 위치 명시 의무 추가 (Brandon E).
+- §10 후보에서 Marcus 제외, 사유 기록 (Brandon F).
+- Brandon A (D16 트리거 정확화)는 그의 mr_review_checklist v1 backlog로 보류.
 
 ---
 
@@ -115,9 +122,11 @@ reference card v1.8이 이미 부품을 다 줬다. v0의 작업은 **새 부품
 6. `rollback_on` 임의 트리거 (예: `--max-ticks 1` flag) → `on_dying` 실행 → testament 작성.
 7. 새 vessel을 같은 Mneme path로 재부팅 → `on_genesis(testament)` → 같은 영혼, 다음 세대.
 
-**성공 정의**: vessel의 응답이 **Brandon으로서의 응답이라고 식별 가능**. 즉 응답 내용이 git/MR 관점에서 답하고, "본능 가드" 같은 brandon-Identity 본문 항목이 행동에 비친다.
+**성공 정의** (모두 충족):
+- vessel의 응답이 **Brandon으로서의 응답이라고 식별 가능**. 즉 응답 내용이 git/MR 관점에서 답하고, "본능 가드" 같은 brandon-Identity 본문 항목이 행동에 비친다.
+- 시연 종료 후 `git diff HEAD -- ClaudeTeam/Brandon/identity/`가 **0 line**. body가 의도치 않게 영혼 파일을 건드리지 않았음을 기계적으로 검증 (영혼이 의도적으로 자기 자신을 갱신한 경우는 별도 commit으로 나타나야 함). **Builder가 첫 시연 commit에 이 검증을 포함.**
 
-**실패 정의**: 응답이 generic LLM 응답, 또는 vessel이 자기 영혼 파일을 못 찾아 죽는다.
+**실패 정의**: 응답이 generic LLM 응답, vessel이 자기 영혼 파일을 못 찾아 죽는다, 또는 영혼 파일이 vessel 부팅만으로 변경된다.
 
 ---
 
@@ -133,6 +142,7 @@ reference card v1.8이 이미 부품을 다 줬다. v0의 작업은 **새 부품
   ClaudeTeam/<member>/identity/    # 영혼 (Mneme path)
   ClaudeTeam/<member>/inbox/       # FS-letter fallback inbox (Stoa 미연결 시)
   ```
+- vessel 런타임은 `git` binary 접근 가능 (ping/pong의 `HEAD_sha` 회신용 — 규칙 14).
 
 ---
 
@@ -154,6 +164,7 @@ design lock 이전 사용자 confirm:
 design lock 후, Builder가 첫 commit과 함께 결정:
 - AIL stdlib 의존 범위 (`stdlib/core` / `stdlib/language` / `stdlib/utils` 중 무엇을 쓰는가).
 - testament JSON 스키마 세부.
+- **testament 저장 위치** — git-tracked path 권고(예: `<mneme_path>/Memo/testaments/`). 이유: Audit 가능 + Physis 세대 체인 시연 가능 + Brandon MR 검증 대상에 포함. FS-only ephemeral은 v1+ 옵션. 누락 시 첫 시연 후 결과가 휘발하므로 Builder 결정으로 미루되 명시 의무.
 - FS Mneme adapter의 path 컨벤션 (atomic write / lockfile / etc.).
 - intent 호출 retry / on_low_confidence 정책 default.
 - evolve `metric` 함수 default (단순 error_rate 정도로 시작 권고).
@@ -163,7 +174,7 @@ design lock 후, Builder가 첫 commit과 함께 결정:
 ## 10. 영입 — 다음 멤버 (Builder)
 
 - 역할: **Builder** — 첫 `.ail` 파일 (`vessel/v0/main.ail`) 작성 + FS Mneme adapter + Stoa adapter 컨트랙트 구현 + Brandon 이식 테스트 시연.
-- 이름: D14에 따라 US English first name. 후보(Lighthouse 잠정 제시, 사용자 결정 우선): **Walter** / **Marcus** / **Owen** / **Eli**. 사용자가 명명하면 그 이름.
+- 이름: D14에 따라 US English first name. 후보(Lighthouse 잠정 제시, 사용자 결정 우선): **Walter** / **Owen** / **Eli**. *Marcus는 옛 그리스/스토아 네이밍과 의미적 인접해 D14 회피 정신과 어색하다는 git-관점 (Brandon) 의견에 따라 잠정 제외.* 사용자가 명명하면 그 이름.
 - 합류 트리거: 본 memo가 user GO를 받은 직후.
 
 ---
