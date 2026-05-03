@@ -35,6 +35,7 @@
 |--------|------|---------------|--------|
 | Arche   | Lighthouse — philosophy, direction, conventions, remote pushes | 아르케 | 2026-05-04 |
 | Brandon | Git/GitHub 관리자 — local git + `gh` API + MR 검증              | 브랜든 | 2026-05-04 |
+| Owen    | Builder — `vessel/v0/main.ail` 작성, FS Mneme/Stoa adapters     | 오웬   | 2026-05-04 |
 
 > 새 멤버 합류 시 이 표에 한 줄 추가.
 
