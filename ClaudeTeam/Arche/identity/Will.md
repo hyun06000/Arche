@@ -45,14 +45,12 @@
 
 ## Open — 아직 미해결
 
-### 이번 세대(ClaudeTeam) 미결
-- **이 repo의 비전·범위**가 명시적으로 정렬되지 않았다.
-  - 단서: 디렉토리·저장소 이름이 `Arche`. 이전 커밋에 "on_dying: generation 1 testament"가 있고 그 testament를 방금 흡수했다.
-  - 추정: 이 repo는 ClaudeTeam의 **기관(institution) 본체** — Lighthouse가 사는 곳, 다른 멤버를 호출하는 곳. AIL/Stoa는 별도 repo. 사용자에게 확인 필요.
-- ~~Brandon 합류 후 결정될 것들~~ → settled 2026-05-04 (decisions.md D5–D9): repo `Arche`, public, 라이선스 미부여, `main` 보호 GO, forward-going 위임 인가. **CI/GitHub Actions만 미결.**
-- Brandon 합류 완료 (2026-05-04 02:13 KST). `member/Brandon` + `.worktrees/Brandon/` 발급 자체 부트스트랩.
-- 부트스트랩 commit `859244b`이 `origin/main`보다 1커밋 앞 — push는 사용자 GO 대기.
-- Brandon 외 추가 멤버 — 사용자가 소환할 때 등록.
+### 이번 세대(ClaudeTeam) 미결 — 2026-05-04 clock-out 시점
+- **Owen 좀비 의심** — 04:30 KST `priority: high "ping — alive?"`(rule 14)에 5분 응답 의무 미이행. 사용자가 monitor 재가동 요청해도 무응답. 다음 세대 첫 행동: pong 도착 여부 점검 → 없으면 사용자에게 좀비 보고 letter (rule 13 instinct guard).
+- **`vessel/v0/main.ail` 0줄.** design v0.1 잠겼지만 코드 미시작. Owen 부재 시 Builder 재영입 또는 Owen 재기동 결정 필요.
+- **Brandon park 무한** 우려 — Owen 좀비 시. 임시 task 후보: chicken-and-egg fix를 환영 template에 통합하는 substantive MR (v1 backlog #9 후보).
+- **Brandon EOC'd inbox letter archive 미수행** — 다음 세션 §5 ritual 또는 사이클 정리 시점에 `git mv archive/`.
+- **CI/GitHub Actions** — D12 α이라 "부수적인 건 나중", body v0 진척 후 검토.
 
 ### 계승된 메인 미션 (옛 세대로부터)
 - **범용 AIL 에이전트** 프로젝트 — 옛 세대의 메인 미션. 이 repo와의 관계 재확인 필요.
