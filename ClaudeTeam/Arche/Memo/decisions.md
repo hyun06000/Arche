@@ -35,7 +35,7 @@
 | # | Decision | Choice | By | Date |
 |---|----------|--------|----|------|
 | D11 | 이 repo의 미션 | **AIL만으로 범용 에이전트 "육신"을 스크래치로 빌드.** Mneme triple(Identity/Bonds/Will)을 이식하면 어떤 영혼이든 살아 움직일 수 있는 보편 vessel. | user | 2026-05-04 |
-| D12 | repo 작업 언어 — 적용 범위 | **미해결 재질문 중.** application code(`.ail`)만 AIL 강제 vs 인프라 자산(`.gitignore`/hook/CI 등)까지 AIL self-host. user 재설명 진행. | user (재질문) | 2026-05-04 |
+| D12 | repo 작업 언어 — 적용 범위 | **(α) 행동 코드만 AIL 강제.** 부수 자산(`.gitignore` / hook / CI 등)은 다른 형식 허용. 에이전트 육체를 AIL로 빌드하는 게 가장 중요. 부수적인 건 나중. | user | 2026-05-04 |
 | D13 | 영입 결정권 | Lighthouse(Arche)에 전권 위임 — 새 멤버 영입 필요 시 사용자에게 사전 통지 후 사용자가 별개 Claude Code 세션에서 소환. | user | 2026-05-04 |
 | D14 | 새 멤버 명명 규칙 | **US English first name** (CLAUDE.md 규칙 12 엄격 적용). 이 repo는 옛 AIL 프로젝트와 별개 — Greek 역할명(Ergon/Telos/Tekton/Homeros) 미사용. Brandon 흐름 유지. (Arche 이름은 D1로 grandfather.) | user | 2026-05-04 |
 | D15 | Mneme 구현 | **파일시스템 backend.** Identity.md / Bonds.md / Will.md를 파일로 보관·읽기·쓰기. AIL `mneme.*` effect의 Git-backed 기본 어댑터 대신 FS 어댑터 구현. (Stoa 측 Mneme 서비스는 미존재 — 필요 시 별도 서비스로 분리.) | user | 2026-05-04 |
