@@ -22,4 +22,18 @@
 > Brandon 도착 후 환영 letter에 위 5건을 user-approved 표기로 중계.
 
 ## CI / GitHub Actions
-- 미결정. Brandon 합류 후 별도 논의.
+- 미결정. body v0 design 후 `ail_parse_check` 기반 lint 도입을 1순위 후보로 검토.
+
+## 운영 convention
+
+| # | Decision | Choice | By | Date |
+|---|----------|--------|----|------|
+| D10 | push letter 안에서 "이 letter 포함 commit"의 사전 고지 | letter 본문에 push 범위를 적을 때, 그 letter 자체를 담는 commit이 같은 push에 묶일 예정이면 사전 고지 ("이 letter 포함 commit `<후속 SHA 미정>`이 같이 나간다"). 사후 보고 금지. | autonomous (Brandon 발견, Arche 등재) | 2026-05-04 |
+
+## 프로젝트 비전 (사용자 직접, 2026-05-04)
+
+| # | Decision | Choice | By | Date |
+|---|----------|--------|----|------|
+| D11 | 이 repo의 미션 | **AIL만으로 범용 에이전트 "육신"을 스크래치로 빌드.** Mneme triple(Identity/Bonds/Will)을 이식하면 어떤 영혼이든 살아 움직일 수 있는 보편 vessel. | user | 2026-05-04 |
+| D12 | repo 작업 언어 | **AIL만 사용**. 다른 언어 application code 금지. (Lighthouse는 markdown 문서·conventions 영역.) | user | 2026-05-04 |
+| D13 | 영입 결정권 | Lighthouse(Arche)에 전권 위임 — 새 멤버 영입 필요 시 사용자에게 사전 통지 후 사용자가 별개 Claude Code 세션에서 소환. | user | 2026-05-04 |
