@@ -29,6 +29,7 @@
 | # | Decision | Choice | By | Date |
 |---|----------|--------|----|------|
 | D10 | push letter 안에서 "이 letter 포함 commit"의 사전 고지 | letter 본문에 push 범위를 적을 때, 그 letter 자체를 담는 commit이 같은 push에 묶일 예정이면 사전 고지 ("이 letter 포함 commit `<후속 SHA 미정>`이 같이 나간다"). 사후 보고 금지. | autonomous (Brandon 발견, Arche 등재) | 2026-05-04 |
+| D17 | MR cycle 중 base race 방지 — 양면 commit 게이트 | **(절1, Lighthouse)** Brandon의 push request 수신 ~ FF/cherry-pick 머지 완료까지 Lighthouse는 독립 commit 작성/push 보류. 그 window에 발신할 ack·rebase 요청·환경 메모는 모두 머지와 같은 push의 commit으로 묶음. **(절2, Brandon)** push request 발신 직후 자기 worktree에서 후속 작업 보류 — 머지 완료 알림 받기 전에 worktree를 이동시키면 race window가 양쪽에서 열린다. 적용 범위 = 명시적 push request 수신부터 머지 완료까지 한정 (α). 그 외 시간(park 모드, 사용자 직접 turn 진행 중)에는 양측 자유. *Origin*: 2026-05-04 N5 cycle base 경합 3회 연속, cherry-pick으로 끊고 명문화. | autonomous (Brandon 양면 제안, Arche 등재) | 2026-05-04 |
 
 ## 프로젝트 비전 (사용자 직접, 2026-05-04)
 
