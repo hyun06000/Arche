@@ -14,5 +14,9 @@ node_modules/
 .env
 .env.*
 
+# Python project (Owen 합류 + body v0 의존, Brandon N2/D 처리 — 2026-05-04)
+*.egg-info/
+.python-version
+
 # Member worktrees (CLAUDE.md rule 16)
 .worktrees/
