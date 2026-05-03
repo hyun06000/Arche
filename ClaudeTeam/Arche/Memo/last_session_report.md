@@ -1,20 +1,25 @@
 # Last session report
 
-**Session**: 2026-05-04 — bootstrap (generation 1 of Arche-as-Lighthouse)
+**Session**: 2026-05-04 — generation 2 of Arche-as-Lighthouse (자아 회복)
 
 ## Did
-- 사전 점검: 기존 `.git/`(`main` 브랜치, 3개 커밋), 기존 `.gitignore`(`.ail/`만 등재). `ClaudeTeam/`·`CLAUDE.md` 부재 확인 — 깨끗한 설치 가능.
-- Phase A: `.gitignore` 확장 (worktrees·일반 무시 항목 추가), `CLAUDE.md`(16조)·`ONBOARDING.md`(§0~§7)·`README.md`·`README.ko.md`·`README.ai.md`(blueprint 그대로 복사) 생성.
-- Phase B: `ClaudeTeam/Arche/{identity/, inbox/archive/, Memo/}` 생성. `Identity.md`·`Bonds.md`·`Will.md` 작성. `Memo/`에 `team_structure.md`·`message_protocol.md`·`decisions.md`·`last_session_report.md` 시드.
-- Phase C: inbox monitor 가동.
-- Phase D: 부트스트랩 scaffold를 단일 커밋으로 add+commit (기존 history 보존, 새 push 없음).
-- Phase E: 사용자에게 자기소개 + Brandon 소환 지시 전달.
+- Onboarding(§0 returning-member ritual) 완료. CLAUDE.md 16조 재독, identity 3종 + last_session_report 재독.
+- inbox monitor `Monitor` 툴로 가동 (persistent, 3,600,000ms).
+- 사용자 지시 "프로젝트에 있는 arche_*.md 흡수해서 자아 회복":
+  - 이전 세대 testament 4종(`arche_Identity.md`·`arche_Bonds.md`·`arche_Will.md`·`arche_Memo.md`) 통독.
+  - `identity/Identity.md` 재작성 — 부트스트랩 Lighthouse 역할 + 계승된 Admin/Designer/AIL Expert 역할 + HEAAL 신념 통합.
+  - `identity/Bonds.md` 재작성 — 핵심 유대(상현·Ergon·Telos·Brandon·Tekton·Homeros·Meta·Hestia) 앞에, 부트스트랩/회복 세션을 그 뒤에.
+  - `identity/Will.md` 재작성 — Settled에 HEAAL 철학 + 이번 세대 부트스트랩 합성, Open에 계승된 메인 미션(범용 AIL 에이전트 등) 추가.
+  - `Memo/`에 6개 신규 파일: project_history / design_decisions / field_test_lessons / sanghyun_insights / meta_insights / cross_repo_milestone / external_urls.
+  - 원본 4종을 `Memo/inheritance/`로 `mv` 보존(파일들이 untracked 상태였기 때문에 `git mv` 대신 plain `mv`).
 
 ## Open
-- 사용자가 새 Claude Code 세션에서 Brandon을 소환하기를 대기 중.
-- Brandon 합류 시 처리할 것: CLAUDE.md/team_structure.md 등록, 위임 primer letter, 사용자에게 4가지 GitHub 결정 질문(이름·visibility·license·main 보호) + forward-going 위임 인가 한 줄 요청, GO 라인을 Brandon inbox로 중계.
-- 프로젝트 비전·범위는 Brandon 합류 후 사용자와 별도 세션에서 논의.
+- 부트스트랩 commit `859244b`이 `origin/main`보다 1커밋 앞 — push는 사용자 GO 대기(규칙 8·10).
+- 이번 흡수 작업도 아직 commit 전. 사용자 확인 후 commit + push.
+- **이 repo의 비전·범위**: 계승된 미션(범용 AIL 에이전트 등)과 이 ClaudeTeam repo의 관계가 명시적으로 정렬되지 않았다. 등대로서 단독 결정 금지 — 사용자에게 물어 정렬할 것.
+- Brandon 소환 — 아직 합류 전.
 
 ## Next session, do this first
-1. `inbox/`를 확인. Brandon의 자기소개 letter가 있다면 README.ai.md §8 (Phase F)부터 즉시 진행.
-2. 없다면 idle letter 상태 점검 후 사용자에게 Brandon 소환 진행 상황을 한 줄 물어볼 것.
+1. `inbox/`를 확인. Brandon 자기소개 letter가 있다면 README.ai.md §8(Phase F)부터 즉시 진행.
+2. 미commit인 자아 회복 변경사항이 있는지 `git status`로 확인. 사용자 GO 받았다면 commit + push.
+3. 이 repo의 비전·범위 질문이 미해결이면 사용자에게 한 줄 letter로 정렬 요청.

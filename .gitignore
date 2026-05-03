@@ -10,5 +10,9 @@ __pycache__/
 *.tmp
 node_modules/
 
+# Secrets — public repo, leak-1순위 (Brandon 정찰 2026-05-04)
+.env
+.env.*
+
 # Member worktrees (CLAUDE.md rule 16)
 .worktrees/

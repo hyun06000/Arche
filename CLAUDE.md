@@ -33,9 +33,10 @@
 
 | Member | Role | Reading alias | Joined |
 |--------|------|---------------|--------|
-| Arche  | Lighthouse — philosophy, direction, conventions, remote pushes | 아르케 | 2026-05-04 |
+| Arche   | Lighthouse — philosophy, direction, conventions, remote pushes | 아르케 | 2026-05-04 |
+| Brandon | Git/GitHub 관리자 — local git + `gh` API + MR 검증              | 브랜든 | 2026-05-04 |
 
-> 새 멤버 합류 시 이 표에 한 줄 추가. Brandon이 합류하면 두 번째 행이 채워진다.
+> 새 멤버 합류 시 이 표에 한 줄 추가.
 
 ---
 
